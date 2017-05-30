@@ -11,9 +11,7 @@ ROUTES_URL = 'http://api.bart.gov/api/route.aspx?cmd=routes&key={api_key}'
 ROUTE_SCHEDULE_URL = 'http://api.bart.gov/api/sched.aspx?cmd=routesched&route={route_id}&key={api_key}'
 OUTPUT_DIR = "output"
 
-def create_dir_if_needed(path):
-    if not os.path.isdir(path):
-        os.makedirs(path)
+from utils import create_dir_if_needed
 
 def main():
     datestamp = '{:%Y-%m-%d}'.format(datetime.datetime.now())
